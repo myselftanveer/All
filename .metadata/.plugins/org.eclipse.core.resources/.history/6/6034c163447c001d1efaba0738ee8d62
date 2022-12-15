@@ -1,0 +1,17 @@
+package test;
+
+import static org.junit.Assert.assertArrayEquals;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class SlackTest {
+	
+	@Test
+	public void welcome() {
+		
+		System.out.println("Hello Slack");
+		Assert.assertTrue(false);
+	}
+
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-12-02T16:23:41 IST" name="Default suite" finished-at="2022-12-02T16:23:46 IST" duration-ms="5241">
+    <groups>
+    </groups>
+    <test started-at="2022-12-02T16:23:41 IST" name="Default test" finished-at="2022-12-02T16:23:46 IST" duration-ms="5241">
+      <class name="library.CRUDBookApi">
+        <test-method is-config="true" signature="BaseURI()[pri:0, instance:library.CRUDBookApi@4e096385]" started-at="2022-12-02T16:23:41 IST" name="BaseURI" finished-at="2022-12-02T16:23:42 IST" duration-ms="805" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseURI -->
+        <test-method signature="AddBookApi()[pri:1, instance:library.CRUDBookApi@4e096385]" started-at="2022-12-02T16:23:42 IST" name="AddBookApi" finished-at="2022-12-02T16:23:45 IST" duration-ms="3920" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddBookApi -->
+        <test-method signature="GetBookByID()[pri:2, instance:library.CRUDBookApi@4e096385]" started-at="2022-12-02T16:23:45 IST" name="GetBookByID" finished-at="2022-12-02T16:23:46 IST" duration-ms="180" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetBookByID -->
+        <test-method is-config="true" signature="BaseURI()[pri:0, instance:library.CRUDBookApi@4e096385]" started-at="2022-12-02T16:23:45 IST" name="BaseURI" finished-at="2022-12-02T16:23:45 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseURI -->
+        <test-method is-config="true" signature="BaseURI()[pri:0, instance:library.CRUDBookApi@4e096385]" started-at="2022-12-02T16:23:46 IST" name="BaseURI" finished-at="2022-12-02T16:23:46 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseURI -->
+        <test-method signature="GetBookByAuthor()[pri:3, instance:library.CRUDBookApi@4e096385]" started-at="2022-12-02T16:23:46 IST" name="GetBookByAuthor" finished-at="2022-12-02T16:23:46 IST" duration-ms="132" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetBookByAuthor -->
+        <test-method is-config="true" signature="BaseURI()[pri:0, instance:library.CRUDBookApi@4e096385]" started-at="2022-12-02T16:23:46 IST" name="BaseURI" finished-at="2022-12-02T16:23:46 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseURI -->
+        <test-method signature="DeleteBookApi()[pri:4, instance:library.CRUDBookApi@4e096385]" started-at="2022-12-02T16:23:46 IST" name="DeleteBookApi" finished-at="2022-12-02T16:23:46 IST" duration-ms="125" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DeleteBookApi -->
+      </class> <!-- library.CRUDBookApi -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

@@ -1,0 +1,12 @@
+package pojo;
+
+public class LoginData {
+	
+	public void loginData() {
+		
+		LoginPOJO login = new LoginPOJO();
+		login.setUsername("admin");
+		login.setPassword("password123");
+	}
+
+}

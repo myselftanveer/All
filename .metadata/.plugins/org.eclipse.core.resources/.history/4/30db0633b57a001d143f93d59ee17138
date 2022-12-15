@@ -1,0 +1,14 @@
+package goRest;
+
+public class GoRestData {
+	
+	public void goRestPayload() {
+		
+		GoRestPOJO pojo = new GoRestPOJO();
+		pojo.setName("QA");
+		pojo.setGender("Male");
+		pojo.setEmail(null);
+		pojo.setStatus("Active");
+	}
+
+}

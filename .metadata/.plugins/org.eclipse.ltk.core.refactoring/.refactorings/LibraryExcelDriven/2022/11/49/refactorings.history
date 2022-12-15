@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 2 elements from project &apos;LibraryExcelDriven&apos;&#x0D;&#x0A;- Original project: &apos;LibraryExcelDriven&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     test.txt&#x0D;&#x0A;     test2.txt" description="Delete elements" element1="test2.txt" element2="test.txt" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="2" stamp="1669610025784" subPackages="false" version="1.0"/>
+</session>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-12-09T14:22:24 IST" name="Suite" finished-at="2022-12-09T14:22:32 IST" duration-ms="7861">
+    <groups>
+    </groups>
+    <test started-at="2022-12-09T14:22:24 IST" name="Test" finished-at="2022-12-09T14:22:32 IST" duration-ms="7861">
+      <class name="apiTestCases.CrudTestUsingPOJO">
+        <test-method signature="AddPlaceApi()[pri:1, instance:apiTestCases.CrudTestUsingPOJO@7393222f]" started-at="2022-12-09T14:22:24 IST" name="AddPlaceApi" finished-at="2022-12-09T14:22:30 IST" duration-ms="6593" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddPlaceApi -->
+        <test-method signature="ExtractPlaceApi()[pri:2, instance:apiTestCases.CrudTestUsingPOJO@7393222f]" started-at="2022-12-09T14:22:30 IST" name="ExtractPlaceApi" finished-at="2022-12-09T14:22:31 IST" duration-ms="524" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ExtractPlaceApi -->
+        <test-method signature="DeletePlaceApi()[pri:3, instance:apiTestCases.CrudTestUsingPOJO@7393222f]" started-at="2022-12-09T14:22:31 IST" name="DeletePlaceApi" finished-at="2022-12-09T14:22:32 IST" duration-ms="693" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DeletePlaceApi -->
+      </class> <!-- apiTestCases.CrudTestUsingPOJO -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

@@ -1,0 +1,13 @@
+package pojo;
+
+public class CreateBookingPOJO {
+	
+		 private String firstname;
+		 private String lastname;
+		 private String totalprice;
+		 private String depositpaid;
+		 private String bookingdates;
+		 private String additionalneeds;
+	
+
+}

@@ -1,0 +1,22 @@
+package pojo;
+
+public class BookingData {
+	
+	public void bookPayload() {
+		
+		CreateBookingPOJO book = new CreateBookingPOJO();
+		book.setFirstname(null);
+		book.setLastname(null);
+		book.setTotalprice(null);
+		book.setDepositpaid(null);
+		
+		BookingDates date = new BookingDates();
+		date.setCheckin(null);
+		date.setCheckout(null);
+		
+		book.setAdditionalneeds(null);
+		
+	}
+	
+
+}

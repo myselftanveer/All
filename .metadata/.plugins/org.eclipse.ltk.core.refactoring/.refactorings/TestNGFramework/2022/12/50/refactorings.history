@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;config.properties&apos; to &apos;RestBookingDemo/src/test/java/resources&apos;&#x0D;&#x0A;- Original project: &apos;TestNGFramework&apos;&#x0D;&#x0A;- Destination element: &apos;RestBookingDemo/src/test/java/resources&apos;&#x0D;&#x0A;- Original element: &apos;config.properties&apos;" description="Copy file" destination="=RestBookingDemo/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;resources" element1="src/test/java/resourses/config.properties" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1670563077237" units="0" version="1.0"/>
+</session>

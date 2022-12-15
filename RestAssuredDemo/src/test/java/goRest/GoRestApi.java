@@ -1,0 +1,88 @@
+package goRest;
+
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.*;
+import static org.testng.Assert.assertEquals;
+
+import org.testng.annotations.Test;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
+public class GoRestApi {
+
+	int ID; 
+	@Test(priority = 1)
+	public void createUser() throws JsonProcessingException {
+		RestAssured.baseURI = "https://gorest.co.in";
+//		GoRestData add = new GoRestData();
+//		ObjectMapper mapper = new ObjectMapper();
+//		String mapJson = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(add.goRestPayload());
+//		System.out.println("serialization" + mapJson);
+		
+/**************************** Create User************************************************/
+		RequestSpecification res = given().relaxedHTTPSValidation().log().all().header("authorization", "Bearer f98e81806c6b3e3e1b55690c89bf0269a5ecaa2ac5fa9b01ece4cc5b2429ddc2")
+				.accept(ContentType.JSON).contentType(ContentType.JSON)
+				.body(GoRestData.goRestPayload());
+		
+		String response = res.when().post("/public/v2/users/").then().log().all().assertThat().statusCode(201)
+				.body("name", equalTo("QA"), "status", equalTo("active")).extract().response().asString();
+		System.out.println("response="+response);
+
+		JsonPath js = new JsonPath(response);
+		ID = js.get("id");
+		System.out.println(ID);
+
+		Response createResponse = res.when().post("/public/v2/users/");
+
+		System.out.println("=======================================================" + createResponse.getStatusCode());
+		System.out.println("=======================================================" + createResponse.getStatusLine());
+	}
+	
+	@Test(priority = 2)
+	public void getUserBeforeDelete() {
+		
+		RequestSpecification get = given().relaxedHTTPSValidation("SSL").log().all()
+		.header("authorization", "Bearer f98e81806c6b3e3e1b55690c89bf0269a5ecaa2ac5fa9b01ece4cc5b2429ddc2")
+		.accept(ContentType.JSON).contentType(ContentType.JSON);
+		
+		String getUser = get.when().get("/public/v2/users/" + ID + "").then().log().all().extract().response().asString();
+		System.out.println("Get User Before Delete="+getUser);
+	}
+	
+	@Test(priority = 3)
+	public void deleteUser() {
+
+		RequestSpecification delete = given().relaxedHTTPSValidation().log().all()
+				.header("authorization", "Bearer f98e81806c6b3e3e1b55690c89bf0269a5ecaa2ac5fa9b01ece4cc5b2429ddc2")
+				.accept(ContentType.JSON).contentType(ContentType.JSON);
+		String del = delete.when().delete("/public/v2/users/" + ID + "")
+				.then().log().all().assertThat().statusCode(204).statusLine(equalTo("HTTP/1.1 204 No Content")).extract().response().asString();
+
+		System.out.println("Delete=" + del);
+		Response deleteResponse = delete.when().delete("/public/v2/users/" + ID + "");
+
+		System.out.println("=======================================================" + deleteResponse.getStatusCode());
+		System.out.println("=======================================================" + deleteResponse.getStatusLine());
+
+	}
+	
+	@Test(priority = 4)
+	public void getUserAfterDelete() {
+		
+		RequestSpecification get = given().relaxedHTTPSValidation("SSL").log().all()
+		.header("authorization", "Bearer f98e81806c6b3e3e1b55690c89bf0269a5ecaa2ac5fa9b01ece4cc5b2429ddc2")
+		.accept(ContentType.JSON).contentType(ContentType.JSON);
+		
+		String getUser = get.when().get("/public/v2/users/" + ID + "").then().body("message",equalTo("Resource not found")).log().all().extract().response().asString();
+		System.out.println("Get User After Delete="+getUser);
+	}
+	
+
+}

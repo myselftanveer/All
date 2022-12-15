@@ -1,0 +1,13 @@
+package test;
+
+import org.testng.annotations.Test;
+
+public class SlackTest {
+	
+	@Test
+	public void welcome() {
+		
+		System.out.println("Hello Slack");
+	}
+
+}

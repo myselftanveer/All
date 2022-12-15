@@ -1,0 +1,64 @@
+package logging;
+
+import static io.restassured.RestAssured.given;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
+
+import io.restassured.RestAssured;
+import io.restassured.filter.log.RequestLoggingFilter;
+import io.restassured.filter.log.ResponseLoggingFilter;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
+public class AddPlaceApi {
+
+	public static void main(String[] args) throws IOException {
+		
+		RestAssured.baseURI = "https://rahulshettyacademy.com";
+		
+		/********************POST Request============AddPlaceApi****************************/
+		
+		PrintStream addPlaceLog = new PrintStream(new FileOutputStream("./src/main/java/resources/addPlace.txt"));
+				
+				RequestSpecification response = given().queryParam("key", "qaclick123").header("Content_Type", "application/json")
+						.body(PayLoad.AddPlaceApi())
+						.filter(RequestLoggingFilter.logRequestTo(addPlaceLog))
+						.filter(ResponseLoggingFilter.logResponseTo(addPlaceLog));
+						String abc = response.when().post("/maps/api/place/add/json")
+						.then().log().all().assertThat()
+						.statusCode(200).extract().response().asString();
+				
+				System.out.println("Responce="+response);
+				
+				Response res = response.when().post("/maps/api/place/add/json");
+				System.out.println("============"+res.getStatusLine());
+				System.out.println("============"+res.getStatusCode());
+				
+//				String ref=response.split("\"reference\":\"")[1];
+////				System.out.println(ref);
+//				String reference=ref.split("\",\"id")[0];
+//				System.out.println("Refrence"+reference);
+				
+//				JSONObject json=new JSONObject(response);
+//				System.out.println("Reference="+json.getString("reference"));
+				
+//				File fileObj = new File("response.json");
+//
+//				if(fileObj.createNewFile()) {
+//					FileWriter myWriter = new FileWriter("./src/main/java/resources/response.json");
+//					myWriter.write(response);
+//					myWriter.close();
+//				}else {
+//					System.out.println("Failed");
+//				}		
+//				
+//				JsonPath js = new JsonPath(response);
+//				String PlaceID = js.getString("place_id");
+//				System.out.println("place id="+PlaceID);
+				
+				
+	}
+
+}
